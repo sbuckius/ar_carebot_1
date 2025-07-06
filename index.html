@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=390, initial-scale=1.0"/>
+  <title>AR Fixed Layout - iPhone 15</title>
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
+  <script src="ar_links_3_iphone.js" defer></script>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: black;
+      overflow: hidden;
+      width: 390px;
+      height: 844px;
+    }
+
+    body {
+      position: relative;
+    }
+
+    canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 390px;
+      height: 844px;
+      z-index: 1;
+    }
+
+    /* Top half box with border */
+    #frame-box {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 390px;
+      height: 422px; /* 50% of 844px */
+      border: 4px  solid DeepPink;
+      box-sizing: border-box;
+      border-radius: 10px;
+      background: rgba(0, 0, 0, 0.05);
+      pointer-events: none;
+      z-index: 10;
+    }
+
+    /* Bottom half layout area */
+    #bottom-ui {
+      position: absolute;
+      top: 422px;
+      left: 0;
+      width: 390px;
+      height: 422px;
+      z-index: 15;
+    }
+
+    .links-left, .links-right {
+      position: absolute;
+      top: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .links-left {
+      left: 10px;
+    }
+
+    .links-right {
+      right: 10px;
+    }
+
+    .link-overlay {
+      background: rgba(255, 255, 255, 0.85);
+      padding: 7px 12px;
+      border-radius: 6px;
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+      font-size: 11px;
+      text-align: center;
+      width: 48px;
+    }
+
+    .bottom-button {
+      position: absolute;
+      bottom: 13px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #FF0074;
+      color: white;
+      padding: 10px 10px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Top half black-outlined transparent frame -->
+  <div id="frame-box"></div>
+
+  <!-- Bottom half: links + button -->
+  <div id="bottom-ui">
+     <div class="links-left">
+      <a class="link-overlay" href="https://patents.google.com/patent/US640348A">Patent by Margaret</a>
+      <a class="link-overlay" href="https://patents.google.com/patent/US683901A">Patent by Helen</a>
+      <a class="link-overlay" href="https://patents.google.com/patent/US683901A">Patent by Helen</a>
+      <a class="link-overlay" href="https://www.computerhistory.org/revolution/calculators/1/65/272">Human Computers</a>
+      <a class="link-overlay" href="https://www.computerhistory.org/revolution/calculators/1/65/272">Human Computers</a>
+      <a class="link-overlay" href="https://www.computerhistory.org/revolution/calculators/1/65/2209">Human Computers</a>
+      <a class="link-overlay" href="https://patents.google.com/patent/US683901A">Patent by Helen</a>
+      <a class="link-overlay" href="https://patents.google.com/patent/US683901A">Patent by Helen</a>
+      <a class="link-overlay" href="https://www.computerhistory.org/revolution/minicomputers/11/362">Woman + Computer</a>
+
+
+    </div>
+
+    <!-- Right column of 8 links -->
+    <div class="links-right">
+       <a class="link-overlay" href="https://patents.google.com/patent/US683901A">Patent by Helen</a> 
+       <a class="link-overlay" href="https://patents.google.com/patent/US258518A">Patent by Mary</a>
+       <a class="link-overlay" href="https://patents.google.com/patent/US258518A">Patent by Mary</a>
+        <a class="link-overlay" href="https://patents.google.com/patent/US258518A">Patent by Mary</a>
+       <a class="link-overlay" href=" https://patents.google.com/patent/US666578A">Patent by Harriet</a> 
+       <a class="link-overlay" href="https://patents.google.com/patent/US258518A">Patent by Mary</a>
+       <a class="link-overlay" href="https://patents.google.com/patent/US258518A">Patent by Mary</a>
+<a class="link-overlay" href="https://www.computerhistory.org/revolution/minicomputers/11/intro/1910">Woman + Computer</a>
+<a class="link-overlay" href="https://www.computerhistory.org/revolution/minicomputers/11/362">Woman + Computer</a>
+    </div>
+
+    <a class="bottom-button" href="https://sarahbuckius.com/carebot-1-0/">CAREBOT 1.0</a>
+  </div>
+</body>
+</html>
