@@ -6,23 +6,23 @@ function preload() {
 }
 
 function setup() {
-  let canvas = createCanvas(390, 844);
+  let canvas = createCanvas(375, 812);
   canvas.position(0, 0);
 
   video = createCapture({
     video: { facingMode: { ideal: "environment" } },
     audio: false
   });
-  video.size(390, 844);
+  video.size(375, 812);
   video.hide();
 }
 
 function draw() {
-  image(video, 0, 0, 390, 844);
+  image(video, 0, 0, 375, 812);
 
   // Place overlay in the bottom half, centered
-  let overlayW = 390;
-  let overlayH = overlayImage.height * (390 / overlayImage.width);
-  let yOffset = 422 + (422 - overlayH) / 2;
+  let overlayW = 375;
+  let overlayH = overlayImage.height * (375 / overlayImage.width);
+  let yOffset = 406 + (406 - overlayH) / 2;
   image(overlayImage, 0, yOffset, overlayW, overlayH);
 }
